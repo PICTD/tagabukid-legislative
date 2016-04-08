@@ -1,0 +1,46 @@
+<workunit>
+    <invokers>
+        <invoker type="attachment:view" action="init" caption="Attachment Viewer" target="popup" width="800" height="600" alwaysOnTop="true" />
+        <invoker type="formActions" action="_close" caption="Close" mnemonic="c" />
+    </invokers>
+    
+    <code lang="groovy">
+
+<![CDATA[        
+
+import com.rameses.rcp.common.*
+import com.rameses.rcp.annotations.*
+import com.rameses.osiris2.client.*
+import com.rameses.gov.etracs.rpt.util.*;
+import tagabukid.legislative.*
+
+public class ImageViewerController 
+{
+    
+    @Binding
+    def binding;
+    
+    def entity;
+    
+    public String getTitle(){
+        return entity.title + ' Attachment'
+    }
+    
+    void init(){
+    }
+    
+    def getImage(){
+        return TagabukidDBImageUtil.getInstance().getImage(entity.objid);
+    }
+    
+    
+}
+
+]]>
+</code>
+    
+    <pages>
+        <page template="com.rameses.gov.etracs.rpt.util.ImageViewerPage" />
+    </pages>
+</workunit>
+

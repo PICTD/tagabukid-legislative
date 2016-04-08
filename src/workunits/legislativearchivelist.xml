@@ -1,0 +1,5 @@
+<workunit extends="wtemplates/ListController.xml" serviceName="TagabukidLegislativeArchiveService" entityName="legislativearchive" formName="legislativearchive:list">
+    <invokers>
+        <invoker type="home.action" caption="Legislative Archive" target="window" index="1" role="MASTER"/>
+    </invokers>
+</workunit>

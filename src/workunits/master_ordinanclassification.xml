@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workunit>
+    <invokers>
+        <invoker type="ordinanceclassification:create" action="init" caption="Ordinance Classification" role="MASTER" />
+        <invoker type="ordinanceclassification:open" action="open" caption="Ordinance Classification" role="MASTER" />
+    </invokers>
+        
+    <code lang="groovy">
+        import com.rameses.rcp.common.*;
+        import com.rameses.rcp.annotations.*;
+        import com.rameses.osiris2.client.*;
+        import com.rameses.osiris2.common.*;
+        
+        public class OrdinanceClassificationController extends CRUDController
+        {
+            String serviceName = 'TagabukidOrdinanceClassificationService'
+            String entityName  = 'ordinanceclassification'
+            String prefixId    = 'OC'
+
+            Map createEntity(){
+                return [special:0]
+            }
+            
+        }
+    </code>
+    
+    <pages>
+        <page template="tagabukid.legislative.master.OrdinanceClassificationPage" />
+    </pages>
+</workunit>

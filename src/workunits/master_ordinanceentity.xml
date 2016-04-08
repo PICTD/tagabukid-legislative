@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workunit>
+    <invokers>
+        <invoker type="ordinanceentity:create" action="init" caption="Ordinance Entity" role="MASTER" />
+        <invoker type="ordinanceentity:open" action="open" caption="Ordinance Entity" role="MASTER" />
+    </invokers>
+        
+    <code lang="groovy">
+        import com.rameses.rcp.common.*;
+        import com.rameses.rcp.annotations.*;
+        import com.rameses.osiris2.client.*;
+        import com.rameses.osiris2.common.*;
+        
+        public class OrdinanceEntityController extends CRUDController
+        {
+            String serviceName = 'TagabukidOrdinanceEntityService'
+            String entityName  = 'ordinanceentity'
+            String prefixId    = 'OC'
+
+            Map createEntity(){
+                return [special:0]
+            }
+        
+          
+            def getLookupEntity(){
+                return Inv.lookupOpener('entity:lookup',[
+                        onselect :{
+                            entity.etracsentity = it;
+                        },
+
+                        onempty: {
+                            //
+                        }
+                ])
+            }
+            
+        }
+    </code>
+    
+    <pages>
+        <page template="tagabukid.legislative.master.OrdinanceEntityPage" />
+    </pages>
+</workunit>

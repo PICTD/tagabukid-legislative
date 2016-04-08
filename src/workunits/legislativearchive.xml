@@ -1,0 +1,12 @@
+<workunit>
+    <invokers>
+        <invoker type="legislativearchive:create" action="init" caption="Legislative Archive" target="window" role="MASTER" />
+        <invoker type="legislativearchive:open" action="open" caption="Legislative Archive" target="window" role="MASTER" />
+    </invokers>
+        
+    <code class="tagabukid.legislative.LegislativeArchiveController"/>
+    
+    <pages>
+        <page template="tagabukid.legislative.LegislativeArchivePage" />
+    </pages>
+</workunit>

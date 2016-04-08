@@ -1,0 +1,37 @@
+<workunit extends="wtemplates/LookupController.xml">
+    
+    <invokers>
+        
+        <invoker type="ordinanceentity:lookup" caption="Ordinance Entity" target="popup" > </invoker>
+        
+    </invokers>
+     <code>
+
+        import com.rameses.rcp.common.*
+        import com.rameses.rcp.annotations.*
+        import com.rameses.osiris2.client.*
+        import com.rameses.osiris2.common.*
+
+        class OrdinanceEntityLookupController extends LookupController
+        {
+            @Service("TagabukidLegislativeArchiveLookupService")
+            def svc
+
+            def state;
+
+            Column[] getColumns() {
+                return [
+                    new Column(name:"entityno", caption:"Code", width:250),
+                    new Column(name:"name", caption:"Name", width:250),
+                    new Column(name:"address.text", caption:"Address", width:250),
+                    new Column(name:"type", caption:"Type", width:250),
+                ]
+            }
+
+            List fetchList( Map params ) { 
+                return svc.lookupOrdinanceEntity(params)
+            }
+        }  
+
+    </code>
+</workunit>

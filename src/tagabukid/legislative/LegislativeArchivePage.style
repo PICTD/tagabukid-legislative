@@ -1,0 +1,14 @@
+"entity.*" [mode == "read"] {
+    readonly:true;
+}
+"selectedCategory|selectedClassification|selectedSubjectMatter|selectedCommittee|selectedEntity|addImage|deleteImage" [mode == "read"] {
+    enabled:false;
+}
+
+"entity.*" [mode != "read"] {
+    readonly:false;
+}
+
+"selectedCategory|selectedClassification|selectedSubjectMatter|selectedCommittee|selectedEntity|addImage|deleteImage" [mode != "read"] {
+    enabled:true;
+}

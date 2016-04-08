@@ -1,0 +1,5 @@
+<workunit extends="wtemplates/ListController.xml" serviceName="TagabukidOrdinanceEntityService" entityName="ordinanceentity" formName="ordinanceentity:list">
+    <invokers>
+        <invoker type="home.action" caption="Ordinance Entity" target="window" index="1" role="MASTER"/>
+    </invokers>
+</workunit>
