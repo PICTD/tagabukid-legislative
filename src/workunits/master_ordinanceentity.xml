@@ -23,7 +23,7 @@
         
           
             def getLookupEntity(){
-                return Inv.lookupOpener('entity:lookup',[
+                return Inv.lookupOpener('ordinanceentity:lookup',[
                         onselect :{
                             entity.etracsentity = it;
                         },
