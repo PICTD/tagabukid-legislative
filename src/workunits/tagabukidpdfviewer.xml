@@ -1,6 +1,6 @@
 <workunit>
     <invokers>
-        <invoker type="attachmentpdf:view" action="init" caption="Attachment Viewer" target="popup" width="800" height="600" alwaysOnTop="true" />
+        <invoker type="attachmentpdf:view" action="init" caption="Attachment Viewer" target="popup" alwaysOnTop="true" />
         <invoker type="formActions" action="_close" caption="Close" mnemonic="c" />
     </invokers>
     
