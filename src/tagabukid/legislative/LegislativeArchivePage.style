@@ -12,3 +12,4 @@
 "selectedCategory|selectedClassification|selectedSubjectMatter|selectedCommittee|selectedEntity|addImage|deleteImage" [mode != "read"] {
     enabled:true;
 }
+

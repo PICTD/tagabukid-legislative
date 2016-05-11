@@ -1,0 +1,6 @@
+<workunit extends="wtemplates/ListController.xml" serviceName="TagabukidLegislativeArchiveService" entityName="legislativearchive" formName="legislativearchive:list">
+    <invokers>
+        <invoker folderid="/explorer/txn/legislativearchive" caption="Data Capture" target="window" index="1" role="ENCODER,REVIEWER,APPROVER"/>
+        <invoker folderid="/home/legislativearchive" caption="Data Capture" target="window" index="1" role="ENCODER,REVIEWER,APPROVER"/>
+    </invokers>
+</workunit>

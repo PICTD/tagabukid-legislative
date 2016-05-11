@@ -1,0 +1,7 @@
+<workunit extends="wtemplates/ExplorerViewController.xml" serviceName="TagabukidLegislativeArchiveListService" 
+     allowOpen="true" allowCreate="false" autoSelect="true" defaultFileType="legislativearchive">
+    <invokers>
+        <!--<invoker folderid="/explorer/txn/bpls" caption="Business Permit List"  index="4" role="LICENSING" />-->
+        <invoker folderid="/home/legislativearchive" caption="Legislative Archive List"  index="50" role="ENCODER,APPROVER,REVIEWER"/>
+    </invokers>
+</workunit>

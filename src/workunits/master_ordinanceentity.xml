@@ -17,10 +17,6 @@
             String entityName  = 'ordinanceentity'
             String prefixId    = 'OC'
 
-            Map createEntity(){
-                return [special:0]
-            }
-        
           
             def getLookupEntity(){
                 return Inv.lookupOpener('ordinanceentity:lookup',[

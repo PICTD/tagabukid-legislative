@@ -27,7 +27,10 @@ public class Main {
             
             Map roles = new HashMap();
             roles.put("LEGISLATIVE.MASTER",null);
-            
+            roles.put("LEGISLATIVE.ENCODER",null);
+            roles.put("LEGISLATIVE.REVIEWER",null);
+            roles.put("LEGISLATIVE.APPROVER",null);
+            roles.put("LEGISLATIVE.SHARED",null);
             OsirisTestPlatform.runTest(env, roles, profile);
         }
         catch(Exception e){

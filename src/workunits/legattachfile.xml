@@ -1,0 +1,63 @@
+<workunit>
+    
+    <invokers>
+        
+        <!--<invoker type="home.action" caption="Attach" action="init"> </invoker>-->
+        
+    </invokers>
+     <code>
+
+        import com.rameses.rcp.common.*
+        import com.rameses.rcp.annotations.*
+        import com.rameses.osiris2.client.*
+        import com.rameses.osiris2.common.*
+        import tagabukid.legislative.*
+        import java.io.File;
+        import java.io.FilenameFilter;
+         
+        class AttachController
+        {
+            @Service("TagabukidLegislativeArchiveMigrationService")
+            def svc
+            def file;
+            def count=0;
+            def nullcount = 0;
+            void init(){
+                def a = svc.getArchive()
+                def file = getFiles();
+                a.each{ x->
+                    def f = file.find{ it.toString().contains(x.ordresno)}
+                    if(f){
+                        def header = createheader(x)
+                        TagabukidDBImageUtil.getInstance().upload(header, f.getAbsolutePath());
+                        println x.ordresno  + "---" + f
+                        count ++;
+                    }else{
+                        println x.ordresno + "---" + f
+                    }
+                }
+                //println count + "---" +nullcount;
+                //TagabukidDBImageUtil.getInstance().upload(header, file.getAbsolutePath());
+            }
+         
+            def createheader(o){
+               def header = [ 
+                    objid   : 'I'+ new java.rmi.server.UID(), 
+                    refid   : o.objid, 
+                    title   : o.ordresno,
+                ]
+                return header
+            }
+         
+            def getFiles(){
+                File dir = new File("C:\\LEG\\attachments");
+                File[] matchingFiles = dir.listFiles();
+                return matchingFiles 
+            }
+        }  
+
+    </code>
+      <pages>
+        <page template="tagabukid.legislative.LegislativeArchivePage" />
+    </pages>
+</workunit>

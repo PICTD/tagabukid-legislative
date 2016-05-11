@@ -1,7 +1,12 @@
 <workunit>
     <invokers>
-        <invoker type="legislativearchive:create" action="init" caption="Legislative Archive" target="window" role="MASTER" />
-        <invoker type="legislativearchive:open" action="open" caption="Legislative Archive" target="window" role="MASTER" />
+        <invoker type="legislativearchive:create" action="init" caption="Legislative Archive" target="window" role="ENCODER" />
+        <invoker type="legislativearchive:open" action="open" caption="Legislative Archive" target="window" role="ENCODER,REVIEWER,APPROVER" />
+        <invoker type="formActions" caption="Submit for Review" action="changestate" visibleWhen="#{mode=='read' &amp;&amp; entity.state=='DRAFT'}" index="10" role="ENCODER" />
+        <invoker type="formActions" caption="Return to Encoder" action="returnstate" visibleWhen="#{mode=='read' &amp;&amp; entity.state.matches('FORREVIEW|FORAPPROVAL')}" index="10" role="REVIEWER" />
+        <invoker type="formActions" caption="Submit for Approval" action="changestate" visibleWhen="#{mode=='read' &amp;&amp; entity.state=='FORREVIEW'}" index="10" role="REVIEWER" />
+        <invoker type="formActions" caption="Return to Reviewer" action="returnstate" visibleWhen="#{mode=='read' &amp;&amp; entity.state=='FORAPPROVAL'}" index="10" role="APPROVER" />
+        <invoker type="formActions" caption="Approve" action="changestate" visibleWhen="#{mode=='read' &amp;&amp; entity.state == 'FORAPPROVAL'}" index="10" role="APPROVER"/>
     </invokers>
         
     <code class="tagabukid.legislative.LegislativeArchiveController"/>

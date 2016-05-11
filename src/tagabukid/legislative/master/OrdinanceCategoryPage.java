@@ -53,6 +53,7 @@ public class OrdinanceCategoryPage extends javax.swing.JPanel {
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 63));
 
+        xTextArea1.setCaption("Description");
         xTextArea1.setName("entity.description"); // NOI18N
         jScrollPane1.setViewportView(xTextArea1);
 

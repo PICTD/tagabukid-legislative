@@ -1,0 +1,19 @@
+<folders>
+    <folder id="explorer">
+        <folder id="txn">
+            <folder id="legislativearchive" caption="Legislative Archive" index="5"/>
+        </folder>
+        <folder id="master">
+            <folder id="ordinancecategory" caption="Ordinance Category" index="5"/>
+            <folder id="ordinanceclassification" caption="Ordinance Classification" index="5"/>
+            <folder id="ordinancecommitee" caption="Ordinance Committee" index="5"/>
+            <folder id="ordinanceentity" caption="Ordinance Entity" index="5"/>
+            <folder id="ordinancesubjectmatter" caption="Ordinance Subject Matter" index="5"/>
+        </folder>
+    </folder> 
+    <folder id="home">
+        <folder id="legislativearchive" caption="Legislative Archive">
+            <folder id="master" caption="Master File" index="5"/>
+        </folder>
+    </folder>
+</folders>

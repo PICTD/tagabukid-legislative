@@ -1,5 +1,5 @@
 <workunit extends="wtemplates/ListController.xml" serviceName="TagabukidOrdinanceCategoryService" entityName="ordinancecategory" formName="ordinancecategory:list">
     <invokers>
-        <invoker type="home.action" caption="Ordinance Category" target="window" index="1" role="MASTER"/>
+         <!--<invoker folderid="/home/legislativearchive/master" caption="Ordinance Category" target="window" index="1" role="MASTER"/>-->
     </invokers>
 </workunit>
