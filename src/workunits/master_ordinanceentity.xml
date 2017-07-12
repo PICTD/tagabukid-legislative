@@ -18,22 +18,37 @@
             String prefixId    = 'OC'
 
           
-            def getLookupEntity(){
-                return Inv.lookupOpener('ordinanceentity:lookup',[
-                        onselect :{
-                            entity.etracsentity = it;
-                        },
+            //def getLookupEntity(){
+            //    return Inv.lookupOpener('ordinanceentity:lookup',[
+            //            onselect :{
+            //                entity.etracsentity = it;
+            //            },
+            //            onempty: {
+            //            }
+            //    ])
+            //}
+        
+            @Service("TagabukidOrdinanceEntityService")
+            def service;
 
-                        onempty: {
-                            //
-                        }
-                ])
+            def rsLookup = [
+                fetchList: { o->
+                    return service.getRSList(o);
+                }
+            ] as SuggestModel;
+
+            public String getRsno() {
+                return getValue(); 
+            }
+
+            public void setRsno(String s) {
+                setValue( s ); 
             }
             
         }
     </code>
     
     <pages>
-        <page template="tagabukid.legislative.master.OrdinanceEntityPage" />
+        <page template="tagabukid.legislative.master.OrdinanceEntityEditPage" />
     </pages>
 </workunit>
